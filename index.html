@@ -9,32 +9,31 @@
             margin: 0;
             padding: 0;
             min-height: 100%;
-            background-color: #000;
+            background-color: #000; /* Pure black background */
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* Removed justify-content: center to stop the overlap */
-            padding-top: 5vh; /* Pushes everything down from the top of the screen */
+            padding-top: 3vh; /* Slight push from the top */
             overflow-x: hidden;
         }
 
-        /* The Hero Image Container */
+        /* The Hero Image Container - No borders or shadows */
         .splash-container {
-            max-width: 90%;
-            max-height: 65vh; /* Shrunk slightly to ensure button fits on laptops */
-            margin-bottom: 40px !important; /* Forces the gap below the image */
-            border: 1px solid #1a1a1a;
-            box-shadow: 0 0 30px rgba(139, 0, 0, 0.15);
+            width: 100%; /* Allows it to expand to full width if needed */
+            max-width: 1200px; /* Limits the size on massive monitors */
+            max-height: 80vh; /* Increased from 65vh so the image can be much larger */
+            margin-bottom: 40px !important; /* Guaranteed gap */
             display: flex;
             justify-content: center;
         }
 
         .splash-image {
-            width: 100%;
+            width: 90%; /* Keeps a small margin on the sides */
             height: auto;
-            max-height: 65vh; /* Keeps the PNG within the frame bounds */
+            max-height: 80vh; 
             display: block;
             object-fit: contain;
+            /* Removed border and box-shadow to let it blend into the #000 background */
         }
 
         /* The Legacy "Message Board" Button */
@@ -42,7 +41,7 @@
             cursor: pointer;
             transition: transform 0.2s ease, filter 0.3s ease;
             filter: brightness(0.8);
-            margin-bottom: 50px; /* Ensures space at the very bottom of the page */
+            margin-bottom: 60px; /* Space at the very bottom */
         }
 
         .enter-button:hover {
@@ -50,11 +49,11 @@
             filter: brightness(1.1) drop-shadow(0 0 15px rgba(255, 0, 0, 0.4));
         }
 
-        /* Responsive tweak for mobile */
+        /* Mobile Optimization */
         @media (max-width: 600px) {
-            .splash-container { margin-bottom: 30px !important; }
+            .splash-container { max-height: 60vh; margin-bottom: 30px !important; }
+            .splash-image { width: 95%; max-height: 60vh; }
             .enter-button { width: 220px; height: auto; }
-            body { padding-top: 3vh; }
         }
     </style>
 </head>
