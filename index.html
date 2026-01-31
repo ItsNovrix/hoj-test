@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House of Jigsaw | Legends Never Die</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #000; /* Pure black to match the old vBulletin void */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* The Hero Image (splash_2.jpg) */
+        .splash-container {
+            max-width: 90%;
+            max-height: 70vh;
+            margin-bottom: 25px;
+            border: 1px solid #1a1a1a; /* Subtle detail for that early web frame look */
+            box-shadow: 0 0 30px rgba(139, 0, 0, 0.15);
+        }
+
+        .splash-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* The Legacy "Message Board" Button */
+        .enter-button {
+            cursor: pointer;
+            transition: transform 0.2s ease, filter 0.3s ease;
+            filter: brightness(0.8);
+        }
+
+        .enter-button:hover {
+            transform: scale(1.03);
+            filter: brightness(1.1) drop-shadow(0 0 15px rgba(255, 0, 0, 0.4));
+        }
+
+        /* Responsive tweak for mobile */
+        @media (max-width: 600px) {
+            .splash-container { margin-bottom: 15px; }
+            .enter-button { width: 200px; height: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="splash-container">
+        <img src="splash_2.jpg" alt="Welcome to the House of Jigsaw" class="splash-image">
+    </div>
+
+    <a href="https://join.houseofjigsaw.gg">
+        <img src="Enter_V1.gif" alt="Enter the House of Jigsaw" class="enter-button">
+    </a>
+
+</body>
+</html>
