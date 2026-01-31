@@ -56,6 +56,28 @@
                 max-width: 180px; 
             }
         }
+        /* The 'X' Hidden Clue */
+        #audio-toggle {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px; /* Adjust based on your 'X' image size */
+            height: auto;
+            cursor: pointer;
+            opacity: 0.3; /* Faded out to look like a hidden clue */
+            transition: opacity 0.5s ease, transform 0.3s ease;
+            z-index: 100; /* Ensures it stays on top of everything */
+        }
+
+        #audio-toggle:hover {
+            opacity: 0.7;
+            transform: scale(1.1);
+        }
+
+        /* Mobile adjustment for the X */
+        @media (max-width: 600px) {
+            #audio-toggle { width: 30px; top: 15px; left: 15px; }
+        }
     </style>
 </head>
 <body>
@@ -67,6 +89,25 @@
     <a href="https://join.houseofjigsaw.gg">
         <img src="Enter_V1.gif" alt="Enter the House of Jigsaw" class="enter-button">
     </a>
+<audio id="ambiance-loop" loop>
+        <source src="ambiance.mp3" type="audio/mpeg">
+    </audio>
 
+    <img src="x_marks_the_spot.png" id="audio-toggle" alt="X">
+
+    <script>
+        const jigsawAudio = document.getElementById('ambiance-loop');
+        const audioBtn = document.getElementById('audio-toggle');
+
+        audioBtn.onclick = function() {
+            if (jigsawAudio.paused) {
+                jigsawAudio.play();
+                audioBtn.style.opacity = "1"; // "X" glows to show it's active
+            } else {
+                jigsawAudio.pause();
+                audioBtn.style.opacity = "0.3";
+            }
+        };
+    </script>
 </body>
 </html>
