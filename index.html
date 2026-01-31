@@ -3,36 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>House of Jigsaw | Legends Never Die</title>
+    <title>Th3 HoUSe of J I G S A W | Legends Never Die</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
-            background-color: #000; /* Pure black to match the old vBulletin void */
+            min-height: 100%;
+            background-color: #000;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            overflow: hidden;
-            /* Added padding to the bottom to give the button room to breathe */
-            padding-bottom: 40px; 
+            /* Removed justify-content: center to stop the overlap */
+            padding-top: 5vh; /* Pushes everything down from the top of the screen */
+            overflow-x: hidden;
         }
 
-        /* The Hero Image (HOJ_BG_2.png) */
+        /* The Hero Image Container */
         .splash-container {
             max-width: 90%;
-            max-height: 70vh;
-            /* Increased margin from 25px to 50px to push the button down */
-            margin-bottom: 50px; 
-            border: 1px solid #1a1a1a; /* Subtle detail for that early web frame look */
+            max-height: 65vh; /* Shrunk slightly to ensure button fits on laptops */
+            margin-bottom: 40px !important; /* Forces the gap below the image */
+            border: 1px solid #1a1a1a;
             box-shadow: 0 0 30px rgba(139, 0, 0, 0.15);
+            display: flex;
+            justify-content: center;
         }
 
         .splash-image {
             width: 100%;
             height: auto;
+            max-height: 65vh; /* Keeps the PNG within the frame bounds */
             display: block;
+            object-fit: contain;
         }
 
         /* The Legacy "Message Board" Button */
@@ -40,27 +42,26 @@
             cursor: pointer;
             transition: transform 0.2s ease, filter 0.3s ease;
             filter: brightness(0.8);
-            /* Extra insurance to separate it from the image container */
-            margin-top: 10px;
+            margin-bottom: 50px; /* Ensures space at the very bottom of the page */
         }
 
         .enter-button:hover {
-            transform: scale(1.03);
+            transform: scale(1.05);
             filter: brightness(1.1) drop-shadow(0 0 15px rgba(255, 0, 0, 0.4));
         }
 
         /* Responsive tweak for mobile */
         @media (max-width: 600px) {
-            /* Kept this slightly smaller but still bigger than before */
-            .splash-container { margin-bottom: 25px; }
-            .enter-button { width: 200px; height: auto; }
+            .splash-container { margin-bottom: 30px !important; }
+            .enter-button { width: 220px; height: auto; }
+            body { padding-top: 3vh; }
         }
     </style>
 </head>
 <body>
 
     <div class="splash-container">
-        <img src="HOJ_BG.jpg" alt="Welcome to the House of Jigsaw" class="splash-image">
+        <img src="HOJ_BG_2.png" alt="Welcome to the House of Jigsaw" class="splash-image">
     </div>
 
     <a href="https://join.houseofjigsaw.gg">
