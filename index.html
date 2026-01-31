@@ -86,9 +86,9 @@
         <img src="HOJ_BG_2.png" alt="Welcome to the House of Jigsaw" class="splash-image">
     </div>
 
-    <a href="https://join.houseofjigsaw.gg">
-        <img src="Enter_V1.gif" alt="Enter the House of Jigsaw" class="enter-button">
-    </a>
+    <a href="javascript:void(0)" onclick="enterTheHouse()">
+    <img src="Enter_V1.gif" alt="Enter the House of Jigsaw" class="enter-button">
+</a>
 <audio id="ambiance-loop" loop>
         <source src="Surprised.mp3" type="audio/mpeg">
     </audio>
@@ -108,6 +108,23 @@
                 audioBtn.style.opacity = "0.3";
             }
         };
+        <audio id="enter-sting">
+    <source src="1_camera.mp3" type="audio/mpeg">
+</audio>
+        function enterTheHouse() {
+    const sting = document.getElementById('enter-sting');
+    
+    // Play the '1_camera' sting
+    sting.play().catch(function(e) {
+        // If audio fails for any reason, redirect immediately so the user isn't stuck
+        window.location.href = "https://join.houseofjigsaw.gg";
+    });
+    
+    // Wait 1.8 seconds (1800ms) then redirect
+    setTimeout(function() {
+        window.location.href = "https://join.houseofjigsaw.gg";
+    }, 1800);
+}
     </script>
 </body>
 </html>
