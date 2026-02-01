@@ -98,39 +98,7 @@ body, html {
     text-shadow: 2px 2px 4px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-/* --- 6. FOLDER STAMP --- */
-.folder-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-.folder-stamp {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-7deg);
-    font-family: 'Anorexia';
-    color: rgba(60, 0, 0, 0.6);
-    font-size: 0.2rem;
-    pointer-events: none;
-    text-align: center;
-    width: 100%;
-}
-
-.folder-stamp {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-7deg);
-    font-family: 'Anorexia';
-    color: rgba(60, 0, 0, 0.6);
-    font-size: 1rem;
-    pointer-events: none;
-    text-align: center;
-    width: 100%;
-}
-
-/* --- 7. FOOTER MENU --- */
+/* --- 6. FOOTER MENU --- */
 .global-footer {
     position: fixed;
     bottom: 30px;
