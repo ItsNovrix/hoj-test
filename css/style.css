@@ -71,12 +71,12 @@ body, html {
 }
 
 .recorder-icon img { width: 120px; } 
-.folder-icon img { width: 160px; } 
+.folder-icon img { width: 180px; } 
 .disk-icon img { width: 120px; }
 .discord-icon img { width: 200px; }
 
 .folder-icon {
-    margin-bottom: -8px; 
+    margin-bottom: -15px; 
 }
 
 .nav-item:hover img {
