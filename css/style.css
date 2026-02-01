@@ -57,17 +57,18 @@ body, html {
 
 /* --- 5. ICONS & TITLES --- */
 .nav-item {
-    text-decoration: none !important; /* Kills blue underlines */
+    text-decoration: none !important;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #888;
+    transition: transform 0.3s ease; /* Added transition here for smooth group movement */
 }
 
 .nav-item img {
     height: auto;
     filter: brightness(0.6) contrast(1.1) sepia(0.2);
-    transition: all 0.3s ease;
+    transition: filter 0.3s ease; /* Images only transition their filter now */
 }
 
 /* Strict Sizes */
@@ -76,18 +77,26 @@ body, html {
 .disk-icon img { width: 120px; }
 .discord-icon img { width: 200px; }
 
+/* The Nudge: Lowers the folder to match the others */
+.folder-icon {
+    margin-bottom: -4px; 
+}
+
+/* Group Hover: The whole object moves now, including the stamp */
+.nav-item:hover {
+    transform: translateY(-8px);
+}
+
 .nav-item:hover img {
     filter: brightness(1) contrast(1) sepia(0);
-    transform: translateY(-5px);
 }
 
 .icon-title {
     font-family: 'ChickenScratch';
-    font-size: 1.3rem; /* Tiny bit bigger */
+    font-size: 1.3rem;
     margin-top: 10px;
     letter-spacing: 1px;
     color: #999;
-    /* The "Shadow Fix": Horizontal, Vertical, Blur, Color */
     text-shadow: 2px 2px 4px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
@@ -95,19 +104,7 @@ body, html {
 .folder-wrapper {
     position: relative;
     display: inline-block;
-}
-
-.folder-stamp {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-7deg);
-    font-family: 'Anorexia';
-    color: rgba(60, 0, 0, 0.6);
-    font-size: 1rem;
-    pointer-events: none;
-    text-align: center;
-    width: 100%;
+    line-height: 0; /* Prevents the wrapper from creating extra bottom space */
 }
 
 .folder-stamp {
@@ -140,7 +137,7 @@ body, html {
 }
 
 .global-footer a {
-    color: #666 !important; /* Force the color away from blue */
+    color: #666 !important;
     text-decoration: none !important;
     padding: 0 15px;
 }
