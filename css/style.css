@@ -190,7 +190,7 @@ body, html {
     flex-direction: column;
     align-items: center;
     padding-top: 100px; /* Clears the saw blade header */
-    padding-bottom: 80px; /* Clears the footer */
+    padding-bottom: 120px; /* Clears the footer */
 }
 
 .archive-title {
