@@ -212,18 +212,18 @@ body, html {
 }
 
 .tape-card {
-    background: rgba(255, 255, 255, 0.05); /* Very subtle box */
-    border: 1px solid #333;
-    padding: 15px;
+    background: transparent; /* No box */
+    border: none; /* No border */
+    padding: 0;
     cursor: pointer;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease;
     text-align: center;
 }
 
 .tape-card:hover {
     transform: scale(1.03);
-    border-color: #a30000; /* Red border on hover */
-    box-shadow: 0 0 15px rgba(163, 0, 0, 0.2);
+    /* Removed the border-color change since there is no border */
+    filter: drop-shadow(0 0 8px rgba(163, 0, 0, 0.5)); /* Red glow behind image instead */
 }
 
 .tape-card img {
