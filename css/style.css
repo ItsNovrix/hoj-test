@@ -120,3 +120,57 @@ body, html {
 .global-footer a:hover {
     color: #ff0000 !important;
 }
+
+/* --- TAPES PAGE SPECIFIC --- */
+.tapes-body {
+    background: url('../images/Tapes_BG_V1.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.tapes-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px; /* Space for the saw blade header */
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 buttons per row */
+    gap: 30px;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.movie-item {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.movie-item img {
+    width: 180px; /* Adjust based on button size */
+    height: auto;
+    filter: brightness(0.9);
+}
+
+.movie-item:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2); /* Makes the logo 'pop' when selected */
+}
+
+/* --- THE RETURN SIGN --- */
+.return-link {
+    font-family: 'ChickenScratch';
+    color: #888 !important;
+    text-decoration: none;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.return-link:hover {
+    color: #ff0000 !important;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
