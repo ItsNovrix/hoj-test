@@ -15,7 +15,7 @@ body, html {
     padding: 0;
     height: 100%;
     background-color: #000;
-    overflow: hidden; /* Keeps the desk from scrolling */
+    overflow: hidden;
 }
 
 .workshop-body {
@@ -37,20 +37,20 @@ body, html {
     max-width: 500px;
 }
 
-/* --- 4. THE WORKBENCH (THE TWO-ROW FIX) --- */
+/* --- 4. THE WORKBENCH --- */
 .workbench-container {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px; /* Space between the two rows */
+    gap: 40px;
 }
 
 .workbench-row {
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Sits everything on the desk surface */
+    align-items: flex-end;
     width: 100%;
     gap: 60px;
 }
@@ -62,33 +62,22 @@ body, html {
     flex-direction: column;
     align-items: center;
     color: #888;
-    transition: transform 0.3s ease; /* Added transition here for smooth group movement */
 }
 
 .nav-item img {
     height: auto;
     filter: brightness(0.6) contrast(1.1) sepia(0.2);
-    transition: filter 0.3s ease; /* Images only transition their filter now */
+    transition: all 0.3s ease;
 }
 
-/* Strict Sizes */
 .recorder-icon img { width: 120px; } 
 .folder-icon img { width: 120px; } 
 .disk-icon img { width: 120px; }
 .discord-icon img { width: 200px; }
 
-/* The Nudge: Lowers the folder to match the others */
-.folder-icon {
-    margin-bottom: -8px; 
-}
-
-/* Group Hover: The whole object moves now, including the stamp */
-.nav-item:hover {
-    transform: translateY(-8px);
-}
-
 .nav-item:hover img {
     filter: brightness(1) contrast(1) sepia(0);
+    transform: translateY(-5px);
 }
 
 .icon-title {
@@ -97,6 +86,7 @@ body, html {
     margin-top: 10px;
     letter-spacing: 1px;
     color: #999;
+    
     text-shadow: 2px 2px 4px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
@@ -104,7 +94,6 @@ body, html {
 .folder-wrapper {
     position: relative;
     display: inline-block;
-    line-height: 0; /* Prevents the wrapper from creating extra bottom space */
 }
 
 .folder-stamp {
@@ -120,7 +109,20 @@ body, html {
     width: 100%;
 }
 
-/* --- 7. THE FOOTER (THE RESCUE) --- */
+.folder-stamp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-7deg);
+    font-family: 'Anorexia';
+    color: rgba(60, 0, 0, 0.6);
+    font-size: 1rem;
+    pointer-events: none;
+    text-align: center;
+    width: 100%;
+}
+
+/* --- 7. FOOTER MENU --- */
 .global-footer {
     position: fixed;
     bottom: 30px;
