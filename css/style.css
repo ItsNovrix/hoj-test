@@ -17,7 +17,7 @@ body, html {
     background-color: #000;
 }
 
-/* 3. Workshop Background & Layout */
+/* 3. Workshop Background */
 .workshop-body {
     background: url('../images/394.png') no-repeat center center fixed;
     background-size: cover;
@@ -26,63 +26,62 @@ body, html {
     min-height: 100vh;
 }
 
-/* 4. Header (Saw-Blade) */
-.workshop-header {
+/* 4. Header (Saw-Blade) - Matched to your HTML */
+.site-header {
     width: 100%;
     text-align: center;
     padding-top: 20px;
 }
 
-.header-logo {
+.header-blade {
     width: 70%;
     max-width: 600px;
     filter: drop-shadow(0 0 10px #000);
 }
 
-/* 5. The Workbench (The Fix for Alignment & Scale) */
-.workbench {
+/* 5. The Workbench (Layout & Alignment) */
+.workbench-container {
     flex-grow: 1;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Centers the whole row vertically */
     padding: 20px;
 }
 
-.icon-row {
+.workbench-grid {
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* This keeps them sitting on the 'desk' */
-    gap: 50px; /* Space between icons */
+    align-items: flex-end; /* Sits everything on the 'table' */
+    gap: 60px; /* Space between icons */
     width: 100%;
 }
 
-.workbench-item {
+.nav-item {
     text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* "Saw-ify" Image Filters & Strict Sizes */
-.physics-object {
+/* 6. Scaling & "Saw-ify" Filters */
+.nav-item img {
     height: auto;
     filter: brightness(0.4) contrast(1.2) sepia(0.3);
     transition: all 0.3s ease;
 }
 
-/* Force the icons to stay small */
-.recorder-icon img { width: 130px; } 
-.folder-icon img { width: 180px; } 
+/* Strict size limits for each icon */
+.recorder-icon img { width: 120px; } 
+.folder-icon img { width: 170px; } 
 .disk-icon img { width: 90px; }
-.message-board img { width: 140px; margin-top: 30px; }
+.discord-icon img { width: 130px; }
 
-.workbench-item:hover .physics-object {
+.nav-item:hover img {
     filter: brightness(0.9) contrast(1) sepia(0);
-    transform: translateY(-5px) rotate(2deg);
+    transform: translateY(-5px);
 }
 
-/* 6. Folder Stamp (Adjusted for smaller size) */
+/* 7. Folder Stamp (Absolute Position) */
 .folder-wrapper {
     position: relative;
     display: inline-block;
@@ -90,19 +89,19 @@ body, html {
 
 .folder-stamp {
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-7deg);
     font-family: 'Anorexia';
     color: rgba(60, 0, 0, 0.7);
-    font-size: 1.1rem;
+    font-size: 1rem; 
     pointer-events: none;
     text-align: center;
-    width: 90%;
+    width: 100%;
 }
 
-/* 7. Labels & Footer */
-.label-scratch {
+/* 8. Labels & Footer */
+.item-label {
     display: block;
     text-align: center;
     font-family: 'ChickenScratch';
@@ -112,7 +111,7 @@ body, html {
     letter-spacing: 1px;
 }
 
-.workshop-footer {
+.global-footer {
     width: 100%;
     text-align: center;
     font-family: 'ChickenScratch';
@@ -121,12 +120,12 @@ body, html {
     padding-bottom: 30px;
 }
 
-.workshop-footer a {
+.global-footer a {
     color: #555;
     text-decoration: none;
     padding: 0 15px;
 }
 
-.workshop-footer a:hover {
+.global-footer a:hover {
     color: #ff0000;
 }
