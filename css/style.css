@@ -79,7 +79,7 @@ body, html {
 
 /* The Nudge: Lowers the folder to match the others */
 .folder-icon {
-    margin-bottom: -4px; 
+    margin-bottom: -8px; 
 }
 
 /* Group Hover: The whole object moves now, including the stamp */
