@@ -1,4 +1,4 @@
-/* 1. Font Registration */
+/* --- 1. FONTS --- */
 @font-face {
     font-family: 'ChickenScratch';
     src: url('../fonts/128_ChickenScratch AOE.ttf');
@@ -9,24 +9,23 @@
     src: url('../fonts/376_Anorexia.ttf');
 }
 
-/* 2. Base Styles */
+/* --- 2. BASE & BACKGROUND --- */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     background-color: #000;
+    overflow: hidden; /* Keeps the desk from scrolling */
 }
 
-/* 3. Workshop Background */
 .workshop-body {
     background: url('../images/394.png') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
-/* 4. Header (Saw-Blade) - Matched to your HTML */
+/* --- 3. HEADER --- */
 .site-header {
     width: 100%;
     text-align: center;
@@ -34,54 +33,62 @@ body, html {
 }
 
 .header-blade {
-    width: 70%;
-    max-width: 600px;
-    filter: drop-shadow(0 0 10px #000);
+    width: 60%;
+    max-width: 500px;
 }
 
-/* 5. The Workbench (Layout & Alignment) */
+/* --- 4. THE WORKBENCH (THE TWO-ROW FIX) --- */
 .workbench-container {
     flex-grow: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center; /* Centers the whole row vertically */
-    padding: 20px;
+    align-items: center;
+    gap: 40px; /* Space between the two rows */
 }
 
-.workbench-grid {
+.workbench-row {
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Sits everything on the 'table' */
-    gap: 60px; /* Space between icons */
+    align-items: flex-end; /* Sits everything on the desk surface */
     width: 100%;
+    gap: 60px;
 }
 
+/* --- 5. ICONS & TITLES --- */
 .nav-item {
-    text-decoration: none;
+    text-decoration: none !important; /* Kills blue underlines */
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #888;
 }
 
-/* 6. Scaling & "Saw-ify" Filters */
 .nav-item img {
     height: auto;
     filter: brightness(0.4) contrast(1.2) sepia(0.3);
     transition: all 0.3s ease;
 }
 
-/* Strict size limits for each icon */
-.recorder-icon img { width: 120px; } 
-.folder-icon img { width: 170px; } 
-.disk-icon img { width: 90px; }
-.discord-icon img { width: 130px; }
+/* Strict Sizes */
+.recorder-icon img { width: 110px; } 
+.folder-icon img { width: 160px; } 
+.disk-icon img { width: 85px; }
+.discord-icon img { width: 120px; }
 
 .nav-item:hover img {
-    filter: brightness(0.9) contrast(1) sepia(0);
+    filter: brightness(0.9) contrast(1.1) sepia(0);
     transform: translateY(-5px);
 }
 
-/* 7. Folder Stamp (Absolute Position) */
+.icon-title {
+    font-family: 'ChickenScratch';
+    font-size: 1.2rem;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+/* --- 6. FOLDER STAMP --- */
 .folder-wrapper {
     position: relative;
     display: inline-block;
@@ -93,39 +100,35 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%) rotate(-7deg);
     font-family: 'Anorexia';
-    color: rgba(60, 0, 0, 0.7);
-    font-size: 1rem; 
+    color: rgba(60, 0, 0, 0.6);
+    font-size: 1rem;
     pointer-events: none;
     text-align: center;
     width: 100%;
 }
 
-/* 8. Labels & Footer */
-.item-label {
-    display: block;
-    text-align: center;
-    font-family: 'ChickenScratch';
-    font-size: 1.2rem;
-    margin-top: 10px;
-    color: #666;
-    letter-spacing: 1px;
-}
-
+/* --- 7. THE FOOTER (THE RESCUE) --- */
 .global-footer {
+    position: fixed;
+    bottom: 30px;
     width: 100%;
     text-align: center;
+    z-index: 100;
+}
+
+.global-footer nav {
     font-family: 'ChickenScratch';
     font-size: 1.4rem;
+    color: #666;
     letter-spacing: 2px;
-    padding-bottom: 30px;
 }
 
 .global-footer a {
-    color: #555;
-    text-decoration: none;
+    color: #666 !important; /* Force the color away from blue */
+    text-decoration: none !important;
     padding: 0 15px;
 }
 
 .global-footer a:hover {
-    color: #ff0000;
+    color: #ff0000 !important;
 }
