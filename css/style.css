@@ -174,3 +174,77 @@ body, html {
     color: #ff0000 !important;
     text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
+
+/* --- EVIDENCE ARCHIVE PAGE (SAW 1) --- */
+
+.archive-body {
+    /* Uses a dark background color. If you have a specific BG image for this room, add the url here */
+    background-color: #0a0a0a; 
+    display: flex;
+    flex-direction: column;
+}
+
+.archive-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px; /* Clears the saw blade header */
+    padding-bottom: 80px; /* Clears the footer */
+}
+
+.archive-title {
+    font-family: 'ChickenScratch';
+    font-size: 2.5rem;
+    color: #a30000; /* Blood red */
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px rgba(163, 0, 0, 0.5);
+}
+
+.player-grid {
+    display: grid;
+    /* Responsive Grid: 2 columns on mobile, 3 columns on desktop */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    width: 90%;
+}
+
+.tape-card {
+    background: rgba(255, 255, 255, 0.05); /* Very subtle box */
+    border: 1px solid #333;
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    text-align: center;
+}
+
+.tape-card:hover {
+    transform: scale(1.03);
+    border-color: #a30000; /* Red border on hover */
+    box-shadow: 0 0 15px rgba(163, 0, 0, 0.2);
+}
+
+.tape-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+    filter: sepia(0.2) contrast(1.1); /* Gritty aesthetic */
+}
+
+.tape-label {
+    font-family: 'ChickenScratch'; /* Matches your site font */
+    font-size: 1.8rem;
+    color: #ccc;
+    letter-spacing: 2px;
+}
+
+/* Mobile Tweak for the grid */
+@media (max-width: 768px) {
+    .player-grid {
+        grid-template-columns: 1fr; /* Stack vertically on phones */
+        width: 80%;
+    }
+}
