@@ -55,10 +55,25 @@
 
     <script>
         function playTape(filename) {
-            const player = document.getElementById('evidence-audio');
-            // Points to the audio folder
-            player.src = "audio/" + filename; 
-            player.play();
+            var player = document.getElementById('evidence-audio');
+            var selectedPath = "audio/" + filename;
+
+            // Check if the user clicked the tape that is ALREADY loaded
+            // We check if the player's current source contains the filename we just clicked
+            if (player.src.includes(filename)) {
+                
+                // If it's the same tape: Toggle Play/Pause
+                if (player.paused) {
+                    player.play();
+                } else {
+                    player.pause();
+                }
+
+            } else {
+                // If it's a NEW tape: Switch source and play immediately
+                player.src = selectedPath;
+                player.play();
+            }
         }
     </script>
 
