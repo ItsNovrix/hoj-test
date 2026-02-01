@@ -49,10 +49,11 @@ body, html {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns */
     grid-template-rows: repeat(2, 1fr);    /* Two rows */
-    gap: 30px 80px; /* Vertical gap, Horizontal gap */
+    gap: 35px 90px; /* Vertical gap, Horizontal gap */
     width: auto;
-    max-width: 600px; /* Limits width to stay inside the box */
-    padding: 40px;
+    max-width: 650px; /* Limits width to stay inside the box */
+    margin-left: 40px;  /* Pushes icons to the RIGHT */
+    margin-top: -50px;  /* Pushes icons UP (negative moves up) */
 }
 
 /* --- 5. ICONS & TITLES --- */
@@ -70,10 +71,10 @@ body, html {
     transition: filter 0.3s ease;
 }
 
-.recorder-icon img { width: 130px; } 
-.folder-icon img { width: 150px; } 
-.disk-icon img { width: 105px; }
-.discord-icon img { width: 150px; }
+.recorder-icon img { width: 150px; } 
+.folder-icon img { width: 170px; } 
+.disk-icon img { width: 125px; }
+.discord-icon img { width: 170px; }
 
 .nav-item:hover {
     transform: scale(1.05); /* Subtle pop instead of floating up */
