@@ -66,32 +66,43 @@ body, html {
 
 .nav-item img {
     height: auto;
-    filter: brightness(0.4) contrast(1.2) sepia(0.3);
+    filter: brightness(0.6) contrast(1.1) sepia(0.2);
     transition: all 0.3s ease;
 }
 
 /* Strict Sizes */
-.recorder-icon img { width: 110px; } 
-.folder-icon img { width: 160px; } 
-.disk-icon img { width: 85px; }
-.discord-icon img { width: 120px; }
+.recorder-icon img { width: 120px; } 
+.folder-icon img { width: 190px; } 
+.disk-icon img { width: 95px; }
+.discord-icon img { width: 160px; }
 
 .nav-item:hover img {
-    filter: brightness(0.9) contrast(1.1) sepia(0);
+    filter: brightness(1) contrast(1) sepia(0);
     transform: translateY(-5px);
 }
 
 .icon-title {
     font-family: 'ChickenScratch';
-    font-size: 1.2rem;
+    font-size: 1.3rem; /* Tiny bit bigger */
     margin-top: 10px;
     letter-spacing: 1px;
+    color: #999;
+    /* The "Shadow Fix": Horizontal, Vertical, Blur, Color */
+    text-shadow: 2px 2px 4px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 /* --- 6. FOLDER STAMP --- */
-.folder-wrapper {
-    position: relative;
-    display: inline-block;
+.folder-stamp {
+    position: absolute;
+    top: 52%; /* Nudged down slightly */
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-7deg);
+    font-family: 'Anorexia';
+    color: rgba(60, 0, 0, 0.6);
+    font-size: 0.9rem; /* Shrunk from 1rem to fit better */
+    pointer-events: none;
+    text-align: center;
+    width: 80%;
 }
 
 .folder-stamp {
