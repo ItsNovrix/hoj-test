@@ -70,10 +70,10 @@ body, html {
     transition: filter 0.3s ease;
 }
 
-.recorder-icon img { width: 110px; } 
-.folder-icon img { width: 130px; } 
-.disk-icon img { width: 85px; }
-.discord-icon img { width: 130px; }
+.recorder-icon img { width: 130px; } 
+.folder-icon img { width: 150px; } 
+.disk-icon img { width: 105px; }
+.discord-icon img { width: 150px; }
 
 .nav-item:hover {
     transform: scale(1.05); /* Subtle pop instead of floating up */
