@@ -1,4 +1,4 @@
-/* Font Registration */
+/* 1. Font Registration */
 @font-face {
     font-family: 'ChickenScratch';
     src: url('../fonts/128_ChickenScratch AOE.ttf');
@@ -9,103 +9,124 @@
     src: url('../fonts/376_Anorexia.ttf');
 }
 
-/* Base Styles */
-body {
+/* 2. Base Styles */
+body, html {
     margin: 0;
+    padding: 0;
+    height: 100%;
     background-color: #000;
-    color: #8a8a8a;
-    font-family: 'Courier New', Courier, monospace;
-    overflow-x: hidden;
 }
 
-/* Workshop Background */
+/* 3. Workshop Background & Layout */
 .workshop-body {
     background: url('../images/394.png') no-repeat center center fixed;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Header & Saw-Blade */
-.site-header {
+/* 4. Header (Saw-Blade) */
+.workshop-header {
     width: 100%;
     text-align: center;
-    padding-top: 10px;
-    z-index: 10;
+    padding-top: 20px;
 }
 
-.header-blade {
-    width: 80%;
-    max-width: 900px;
+.header-logo {
+    width: 70%;
+    max-width: 600px;
     filter: drop-shadow(0 0 10px #000);
 }
 
-/* The Workbench Grid */
-.workbench-container {
-    height: 80vh;
+/* 5. The Workbench (The Fix for Alignment & Scale) */
+.workbench {
+    flex-grow: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
-.workbench-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+.icon-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* This keeps them sitting on the 'desk' */
+    gap: 50px; /* Space between icons */
+    width: 100%;
+}
+
+.workbench-item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    width: 90%;
-    max-width: 1100px;
 }
 
-/* "Saw-ify" Image Filters */
-.nav-item img {
-    max-width: 250px;
+/* "Saw-ify" Image Filters & Strict Sizes */
+.physics-object {
     height: auto;
-    filter: brightness(0.5) contrast(1.3) sepia(0.2);
-    transition: filter 0.3s ease;
+    filter: brightness(0.4) contrast(1.2) sepia(0.3);
+    transition: all 0.3s ease;
 }
 
-.nav-item:hover img {
-    filter: brightness(0.8) contrast(1.1) sepia(0);
+/* Force the icons to stay small */
+.recorder-icon img { width: 130px; } 
+.folder-icon img { width: 180px; } 
+.disk-icon img { width: 90px; }
+.message-board img { width: 140px; margin-top: 30px; }
+
+.workbench-item:hover .physics-object {
+    filter: brightness(0.9) contrast(1) sepia(0);
+    transform: translateY(-5px) rotate(2deg);
 }
 
-/* Stamped Labels */
+/* 6. Folder Stamp (Adjusted for smaller size) */
+.folder-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
 .folder-stamp {
     position: absolute;
     top: 55%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-5deg);
+    transform: translate(-50%, -50%) rotate(-7deg);
     font-family: 'Anorexia';
-    color: #4a0000; /* Dried blood red */
-    font-size: 1.8rem;
+    color: rgba(60, 0, 0, 0.7);
+    font-size: 1.1rem;
     pointer-events: none;
+    text-align: center;
+    width: 90%;
 }
 
-.item-label, .disk-label {
+/* 7. Labels & Footer */
+.label-scratch {
     display: block;
     text-align: center;
     font-family: 'ChickenScratch';
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-top: 10px;
-    color: #b0b0b0;
+    color: #666;
+    letter-spacing: 1px;
 }
 
-/* Global Footer */
-.global-footer {
-    position: fixed;
-    bottom: 20px;
+.workshop-footer {
     width: 100%;
     text-align: center;
     font-family: 'ChickenScratch';
     font-size: 1.4rem;
     letter-spacing: 2px;
+    padding-bottom: 30px;
 }
 
-.global-footer a {
-    color: #8a8a8a;
+.workshop-footer a {
+    color: #555;
     text-decoration: none;
     padding: 0 15px;
 }
 
-.global-footer a:hover {
-    color: #fff;
-    text-shadow: 0 0 5px #ff0000;
+.workshop-footer a:hover {
+    color: #ff0000;
 }
