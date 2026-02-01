@@ -73,8 +73,8 @@ body, html {
 /* Strict Sizes */
 .recorder-icon img { width: 120px; } 
 .folder-icon img { width: 190px; } 
-.disk-icon img { width: 95px; }
-.discord-icon img { width: 160px; }
+.disk-icon img { width: 120px; }
+.discord-icon img { width: 200px; }
 
 .nav-item:hover img {
     filter: brightness(1) contrast(1) sepia(0);
